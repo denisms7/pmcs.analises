@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portal de Sistemas — PMCS</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f4f5f7;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+      color: #1a1a1a;
+    }
+
+    .portal-wrapper {
+      width: 100%;
+      max-width: 960px;
+    }
+
+    .portal-header {
+      margin-bottom: 2rem;
+    }
+
+    .portal-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 1rem;
+    }
+
+    .logo-icon {
+      width: 44px;
+      height: 44px;
+      background: #1a56db;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 22px;
+    }
+
+    .portal-title {
+      font-size: 24px;
+      font-weight: 600;
+      color: #111827;
+    }
+
+    .portal-subtitle {
+      font-size: 14px;
+      color: #6b7280;
+      margin-top: 2px;
+    }
+
+    .portal-description {
+      font-size: 15px;
+      color: #4b5563;
+      line-height: 1.6;
+      max-width: 560px;
+    }
+
+    .systems-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+    }
+
+    .sys-card {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 1.5rem;
+      text-decoration: none;
+      display: block;
+      transition: box-shadow 0.2s, border-color 0.2s, transform 0.15s;
+      color: inherit;
+    }
+
+    .sys-card:hover {
+      border-color: #c7d2fe;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .sys-card:hover .card-arrow {
+      opacity: 1;
+      transform: translateX(3px);
+    }
+
+    .card-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 14px;
+    }
+
+    .card-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+
+    .card-arrow {
+      font-size: 18px;
+      color: #9ca3af;
+      opacity: 0;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+
+    .card-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: #111827;
+      margin-bottom: 6px;
+    }
+
+    .card-desc {
+      font-size: 13.5px;
+      color: #6b7280;
+      line-height: 1.55;
+      margin-bottom: 16px;
+    }
+
+    .card-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 12px;
+      font-weight: 500;
+      padding: 4px 11px;
+      border-radius: 999px;
+      border: 1px solid;
+    }
+
+    .icon-blue  { background: #eff6ff; color: #1d4ed8; }
+    .icon-teal  { background: #f0fdf4; color: #15803d; }
+    .icon-amber { background: #fffbeb; color: #b45309; }
+    .icon-coral { background: #fff7ed; color: #c2410c; }
+
+    .tag-blue  { background: #eff6ff; color: #1e40af; border-color: #bfdbfe; }
+    .tag-teal  { background: #f0fdf4; color: #166534; border-color: #bbf7d0; }
+    .tag-amber { background: #fffbeb; color: #92400e; border-color: #fde68a; }
+    .tag-coral { background: #fff7ed; color: #9a3412; border-color: #fed7aa; }
+
+    .portal-footer {
+      margin-top: 2.5rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding-top: 1.5rem;
+      border-top: 1px solid #e5e7eb;
+    }
+
+    .footer-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #22c55e;
+    }
+
+    .footer-text {
+      font-size: 13px;
+      color: #9ca3af;
+    }
+
+    @media (max-width: 600px) {
+      .systems-grid {
+        grid-template-columns: 1fr;
+      }
+      .portal-title {
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="portal-wrapper">
+
+    <div class="portal-header">
+      <div class="portal-logo">
+        <div class="logo-icon">
+          <i class="ti ti-layout-grid" aria-hidden="true"></i>
+        </div>
+        <div>
+          <p class="portal-title">Portal de Sistemas</p>
+          <p class="portal-subtitle">PMCS — Análises e Gestão Municipal</p>
+        </div>
+      </div>
+      <p class="portal-description">
+        Acesso centralizado aos sistemas de análise e gestão. Clique em um sistema para abri-lo.
+      </p>
+    </div>
+
+    <div class="systems-grid">
+
+      <a class="sys-card" href="https://pmcsrcl.streamlit.app/" target="_blank" rel="noopener noreferrer">
+        <div class="card-top">
+          <div class="card-icon icon-blue">
+            <i class="ti ti-chart-bar" aria-hidden="true"></i>
+          </div>
+          <i class="ti ti-external-link card-arrow" aria-hidden="true"></i>
+        </div>
+        <p class="card-title">Receita Corrente Líquida</p>
+        <p class="card-desc">Análise e acompanhamento da receita corrente líquida municipal, com indicadores fiscais e evolução histórica.</p>
+        <span class="card-tag tag-blue">
+          <i class="ti ti-report-analytics" style="font-size:13px" aria-hidden="true"></i>
+          Financeiro
+        </span>
+      </a>
+
+      <a class="sys-card" href="https://seab-vbp.streamlit.app/" target="_blank" rel="noopener noreferrer">
+        <div class="card-top">
+          <div class="card-icon icon-teal">
+            <i class="ti ti-trending-up" aria-hidden="true"></i>
+          </div>
+          <i class="ti ti-external-link card-arrow" aria-hidden="true"></i>
+        </div>
+        <p class="card-title">Valor Bruto da Produção</p>
+        <p class="card-desc">Análise do VBP e indicadores de produção agropecuária, com séries temporais e comparativos regionais.</p>
+        <span class="card-tag tag-teal">
+          <i class="ti ti-leaf" style="font-size:13px" aria-hidden="true"></i>
+          Agropecuário
+        </span>
+      </a>
+
+      <a class="sys-card" href="https://lrehfbytylpm.streamlit.app/" target="_blank" rel="noopener noreferrer">
+        <div class="card-top">
+          <div class="card-icon icon-amber">
+            <i class="ti ti-clock" aria-hidden="true"></i>
+          </div>
+          <i class="ti ti-external-link card-arrow" aria-hidden="true"></i>
+        </div>
+        <p class="card-title">Horas Extras</p>
+        <p class="card-desc">Controle e análise das horas extras por servidor e unidade, com relatórios mensais e alertas de limite.</p>
+        <span class="card-tag tag-amber">
+          <i class="ti ti-users" style="font-size:13px" aria-hidden="true"></i>
+          RH
+        </span>
+      </a>
+
+      <a class="sys-card" href="https://sysfrotas.streamlit.app/" target="_blank" rel="noopener noreferrer">
+        <div class="card-top">
+          <div class="card-icon icon-coral">
+            <i class="ti ti-truck" aria-hidden="true"></i>
+          </div>
+          <i class="ti ti-external-link card-arrow" aria-hidden="true"></i>
+        </div>
+        <p class="card-title">Sistema de Frotas</p>
+        <p class="card-desc">Gestão e análise da frota de veículos municipais, com controle de manutenção, abastecimento e utilização.</p>
+        <span class="card-tag tag-coral">
+          <i class="ti ti-map-pin" style="font-size:13px" aria-hidden="true"></i>
+          Frotas
+        </span>
+      </a>
+
+    </div>
+
+    <div class="portal-footer">
+      <div class="footer-dot"></div>
+      <span class="footer-text">4 sistemas disponíveis · Todos os sistemas</span>
+    </div>
+
+  </div>
+
+</body>
+</html>
